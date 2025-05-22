@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/zabmon.dir/home/timsus/projects/ZabMon/proto/generated/zabmon.grpc.pb.cc.o"
+  "CMakeFiles/zabmon.dir/home/timsus/projects/ZabMon/proto/generated/zabmon.grpc.pb.cc.o.d"
+  "CMakeFiles/zabmon.dir/home/timsus/projects/ZabMon/proto/generated/zabmon.pb.cc.o"
+  "CMakeFiles/zabmon.dir/home/timsus/projects/ZabMon/proto/generated/zabmon.pb.cc.o.d"
+  "CMakeFiles/zabmon.dir/src/api/jsonrpcmanager.cpp.o"
+  "CMakeFiles/zabmon.dir/src/api/jsonrpcmanager.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/api/zabbixapi.cpp.o"
+  "CMakeFiles/zabmon.dir/src/api/zabbixapi.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/exceptions.cpp.o"
+  "CMakeFiles/zabmon.dir/src/exceptions.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/grpcadapter.cpp.o"
+  "CMakeFiles/zabmon.dir/src/grpcadapter.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/main.cpp.o"
+  "CMakeFiles/zabmon.dir/src/main.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/monitor.cpp.o"
+  "CMakeFiles/zabmon.dir/src/monitor.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/service.cpp.o"
+  "CMakeFiles/zabmon.dir/src/service.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/host.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/host.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/hostgroup.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/hostgroup.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/interfaces.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/interfaces.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/item.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/item.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/itemvalues.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/itemvalues.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/template.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/template.cpp.o.d"
+  "CMakeFiles/zabmon.dir/src/structures/value.cpp.o"
+  "CMakeFiles/zabmon.dir/src/structures/value.cpp.o.d"
+  "zabmon"
+  "zabmon.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/zabmon.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
