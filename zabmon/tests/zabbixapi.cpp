@@ -28,7 +28,6 @@ class ZabbixApiTest : public ::testing::Test
   std::unordered_map<std::string, std::string> m_interfacesIds;
   // Время для того, чтобы zabbix сервер успел получить значения элементов
   // данных
-  // NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
   std::chrono::seconds m_waitingTime = std::chrono::seconds(10);
   std::shared_ptr<zab::mon::ZabbixApi>
   createClient()
@@ -124,21 +123,18 @@ class ZabbixApiTest : public ::testing::Test
   void TearDown() override {  }
 };
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetAuthTokenWithGoodParams)
 {
   std::string ans = m_zabbix->getAuthToken("Admin", "zabbix");
   ASSERT_TRUE(!ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetAuthTokenWithBadLoginAndPassword)
 {
   std::string ans = m_badzabbix->getAuthToken("Ad", "za");
   ASSERT_TRUE(ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetAllGroups)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -146,7 +142,6 @@ GTEST_TEST_F(ZabbixApiTest, GetAllGroups)
   ASSERT_TRUE(!ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetAllTemplates)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -169,7 +164,6 @@ GTEST_TEST_F(ZabbixApiTest, GetAllTemplates)
   ASSERT_TRUE(ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetListItems)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -183,7 +177,6 @@ GTEST_TEST_F(ZabbixApiTest, GetListItems)
   ASSERT_TRUE(!ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, GetAllHosts)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -205,7 +198,6 @@ GTEST_TEST_F(ZabbixApiTest, GetAllHosts)
   ASSERT_TRUE(ans.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, getHistoryValue)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -222,16 +214,13 @@ GTEST_TEST_F(ZabbixApiTest, getHistoryValue)
   ASSERT_TRUE(!ans.values.empty());
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, DeleteHostWithWrongParametrs)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
-  // NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
   EXPECT_THROW(!m_zabbix->deleteHost("sjdhsfjksdhjkfhsdkfhdsk", token),
                zab::mon::InvalidResponseError);
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteHostGroup)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -243,7 +232,6 @@ GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteHostGroup)
   ASSERT_TRUE(m_zabbix->deleteHostGroup(groupId, token));
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteTemplate)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -262,7 +250,6 @@ GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteTemplate)
   ASSERT_TRUE(m_zabbix->deleteHostGroup(groupId, token));
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteItem)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");
@@ -282,7 +269,6 @@ GTEST_TEST_F(ZabbixApiTest, CreateAndDeleteItem)
   ASSERT_TRUE(m_zabbix->deleteItem(itemId, token));
 }
 
-// NOLINTNEXTLINE (cppcoreguidelines-owning-memory)
 GTEST_TEST_F(ZabbixApiTest, HostCrudTest)
 {
   std::string token = m_zabbix->getAuthToken("Admin", "zabbix");

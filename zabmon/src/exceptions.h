@@ -8,19 +8,19 @@ namespace zab::mon
 
 {
 /// @brief Класс ошибок
-class MonitorException : public std::exception
+class ZabMonException : public std::exception
 {
  public:
   /// @brief конструктор
   /// @param error - ошибка, которая устанавливается в what()
-  explicit MonitorException(std::string error = "");
+  explicit ZabMonException(std::string error = "");
   [[nodiscard]] const char* what() const noexcept override;
 
  private:
   const std::string m_error;
 };
 /// @brief Ошибка, если не удается подключиться к заббиксу
-class ConnectionError : public MonitorException
+class ConnectionError : public ZabMonException
 {
  public:
   /// @brief Конструктор
@@ -28,7 +28,7 @@ class ConnectionError : public MonitorException
   explicit ConnectionError(std::string error = "");
 };
 /// @brief Ошибка, если ответ пришел не того типа
-class InvalidResponseError : public MonitorException
+class InvalidResponseError : public ZabMonException
 {
  public:
   /// @brief Конструктор
@@ -36,7 +36,7 @@ class InvalidResponseError : public MonitorException
   explicit InvalidResponseError(std::string error = "");
 };
 /// @brief Ошибка, если итем недоступен
-class ItemStatusError : public MonitorException
+class ItemStatusError : public ZabMonException
 {
  public:
   /// @brief Конструктор
@@ -44,7 +44,7 @@ class ItemStatusError : public MonitorException
   explicit ItemStatusError(std::string error = "");
 };
 /// @brief Ошибка, если тип значения итема не определён
-class ValueTypeError : public MonitorException
+class ValueTypeError : public ZabMonException
 {
  public:
   /// @brief Конструктор

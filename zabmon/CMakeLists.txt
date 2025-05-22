@@ -49,7 +49,5 @@ CURL::libcurl
     gpr             
     absl::synchronization
     protobuf::libprotobuf
-    pqxx
-    pq
     Threads::Threads
 )

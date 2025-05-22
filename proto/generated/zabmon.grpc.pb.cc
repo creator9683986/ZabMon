@@ -21,504 +21,504 @@
 #include <grpcpp/support/sync_stream.h>
 namespace zabmon {
 
-static const char* MonitorService_method_names[] = {
-  "/zabmon.MonitorService/createHost",
-  "/zabmon.MonitorService/createGroup",
-  "/zabmon.MonitorService/createTemplate",
-  "/zabmon.MonitorService/createItem",
-  "/zabmon.MonitorService/deleteHost",
-  "/zabmon.MonitorService/deleteGroup",
-  "/zabmon.MonitorService/deleteTemplate",
-  "/zabmon.MonitorService/deleteItem",
-  "/zabmon.MonitorService/updateHost",
-  "/zabmon.MonitorService/listHosts",
-  "/zabmon.MonitorService/listGroups",
-  "/zabmon.MonitorService/listTemplates",
-  "/zabmon.MonitorService/listItems",
-  "/zabmon.MonitorService/listItemsValues",
+static const char* ZabMonService_method_names[] = {
+  "/zabmon.ZabMonService/createHost",
+  "/zabmon.ZabMonService/createGroup",
+  "/zabmon.ZabMonService/createTemplate",
+  "/zabmon.ZabMonService/createItem",
+  "/zabmon.ZabMonService/deleteHost",
+  "/zabmon.ZabMonService/deleteGroup",
+  "/zabmon.ZabMonService/deleteTemplate",
+  "/zabmon.ZabMonService/deleteItem",
+  "/zabmon.ZabMonService/updateHost",
+  "/zabmon.ZabMonService/listHosts",
+  "/zabmon.ZabMonService/listGroups",
+  "/zabmon.ZabMonService/listTemplates",
+  "/zabmon.ZabMonService/listItems",
+  "/zabmon.ZabMonService/listItemsValues",
 };
 
-std::unique_ptr< MonitorService::Stub> MonitorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< ZabMonService::Stub> ZabMonService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< MonitorService::Stub> stub(new MonitorService::Stub(channel, options));
+  std::unique_ptr< ZabMonService::Stub> stub(new ZabMonService::Stub(channel, options));
   return stub;
 }
 
-MonitorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_createHost_(MonitorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createGroup_(MonitorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createTemplate_(MonitorService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createItem_(MonitorService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteHost_(MonitorService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteGroup_(MonitorService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteTemplate_(MonitorService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteItem_(MonitorService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_updateHost_(MonitorService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_listHosts_(MonitorService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_listGroups_(MonitorService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_listTemplates_(MonitorService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_listItems_(MonitorService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_listItemsValues_(MonitorService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+ZabMonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_createHost_(ZabMonService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_createGroup_(ZabMonService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_createTemplate_(ZabMonService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_createItem_(ZabMonService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteHost_(ZabMonService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteGroup_(ZabMonService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteTemplate_(ZabMonService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteItem_(ZabMonService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_updateHost_(ZabMonService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listHosts_(ZabMonService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listGroups_(ZabMonService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listTemplates_(ZabMonService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listItems_(ZabMonService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_listItemsValues_(ZabMonService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MonitorService::Stub::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::zabmon::Host* response) {
+::grpc::Status ZabMonService::Stub::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::zabmon::Host* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::CreateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_createHost_, context, request, response);
 }
 
-void MonitorService::Stub::async::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::CreateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createHost_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::createHost(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createHost_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Host>* MonitorService::Stub::PrepareAsynccreateHostRaw(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Host>* ZabMonService::Stub::PrepareAsynccreateHostRaw(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::Host, ::zabmon::CreateHostRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_createHost_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Host>* MonitorService::Stub::AsynccreateHostRaw(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Host>* ZabMonService::Stub::AsynccreateHostRaw(::grpc::ClientContext* context, const ::zabmon::CreateHostRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynccreateHostRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::zabmon::Group* response) {
+::grpc::Status ZabMonService::Stub::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::zabmon::Group* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::CreateGroupRequest, ::zabmon::Group, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_createGroup_, context, request, response);
 }
 
-void MonitorService::Stub::async::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::CreateGroupRequest, ::zabmon::Group, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createGroup_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::createGroup(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createGroup_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Group>* MonitorService::Stub::PrepareAsynccreateGroupRaw(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Group>* ZabMonService::Stub::PrepareAsynccreateGroupRaw(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::Group, ::zabmon::CreateGroupRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_createGroup_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Group>* MonitorService::Stub::AsynccreateGroupRaw(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Group>* ZabMonService::Stub::AsynccreateGroupRaw(::grpc::ClientContext* context, const ::zabmon::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynccreateGroupRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::zabmon::Template* response) {
+::grpc::Status ZabMonService::Stub::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::zabmon::Template* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::CreateTemplateRequest, ::zabmon::Template, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_createTemplate_, context, request, response);
 }
 
-void MonitorService::Stub::async::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::CreateTemplateRequest, ::zabmon::Template, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createTemplate_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::createTemplate(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createTemplate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Template>* MonitorService::Stub::PrepareAsynccreateTemplateRaw(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Template>* ZabMonService::Stub::PrepareAsynccreateTemplateRaw(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::Template, ::zabmon::CreateTemplateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_createTemplate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Template>* MonitorService::Stub::AsynccreateTemplateRaw(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Template>* ZabMonService::Stub::AsynccreateTemplateRaw(::grpc::ClientContext* context, const ::zabmon::CreateTemplateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynccreateTemplateRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::zabmon::Item* response) {
+::grpc::Status ZabMonService::Stub::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::zabmon::Item* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::CreateItemRequest, ::zabmon::Item, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_createItem_, context, request, response);
 }
 
-void MonitorService::Stub::async::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::CreateItemRequest, ::zabmon::Item, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createItem_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::createItem(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_createItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Item>* MonitorService::Stub::PrepareAsynccreateItemRaw(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Item>* ZabMonService::Stub::PrepareAsynccreateItemRaw(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::Item, ::zabmon::CreateItemRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_createItem_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Item>* MonitorService::Stub::AsynccreateItemRaw(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Item>* ZabMonService::Stub::AsynccreateItemRaw(::grpc::ClientContext* context, const ::zabmon::CreateItemRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynccreateItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Stub::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::DeleteHostRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_deleteHost_, context, request, response);
 }
 
-void MonitorService::Stub::async::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::DeleteHostRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteHost_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::deleteHost(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteHost_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::PrepareAsyncdeleteHostRaw(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::PrepareAsyncdeleteHostRaw(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::zabmon::DeleteHostRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_deleteHost_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::AsyncdeleteHostRaw(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::AsyncdeleteHostRaw(::grpc::ClientContext* context, const ::zabmon::DeleteHostRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncdeleteHostRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Stub::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::DeleteGroupRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_deleteGroup_, context, request, response);
 }
 
-void MonitorService::Stub::async::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::DeleteGroupRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteGroup_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::deleteGroup(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteGroup_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::PrepareAsyncdeleteGroupRaw(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::PrepareAsyncdeleteGroupRaw(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::zabmon::DeleteGroupRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_deleteGroup_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::AsyncdeleteGroupRaw(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::AsyncdeleteGroupRaw(::grpc::ClientContext* context, const ::zabmon::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncdeleteGroupRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Stub::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::DeleteTemplateRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_deleteTemplate_, context, request, response);
 }
 
-void MonitorService::Stub::async::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::DeleteTemplateRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteTemplate_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::deleteTemplate(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteTemplate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::PrepareAsyncdeleteTemplateRaw(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::PrepareAsyncdeleteTemplateRaw(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::zabmon::DeleteTemplateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_deleteTemplate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::AsyncdeleteTemplateRaw(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::AsyncdeleteTemplateRaw(::grpc::ClientContext* context, const ::zabmon::DeleteTemplateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncdeleteTemplateRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Stub::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::DeleteItemRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_deleteItem_, context, request, response);
 }
 
-void MonitorService::Stub::async::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::DeleteItemRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteItem_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::deleteItem(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::PrepareAsyncdeleteItemRaw(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::PrepareAsyncdeleteItemRaw(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::zabmon::DeleteItemRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_deleteItem_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* MonitorService::Stub::AsyncdeleteItemRaw(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* ZabMonService::Stub::AsyncdeleteItemRaw(::grpc::ClientContext* context, const ::zabmon::DeleteItemRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncdeleteItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::zabmon::Host* response) {
+::grpc::Status ZabMonService::Stub::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::zabmon::Host* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::UpdateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_updateHost_, context, request, response);
 }
 
-void MonitorService::Stub::async::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::UpdateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_updateHost_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::updateHost(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_updateHost_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Host>* MonitorService::Stub::PrepareAsyncupdateHostRaw(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Host>* ZabMonService::Stub::PrepareAsyncupdateHostRaw(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::Host, ::zabmon::UpdateHostRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_updateHost_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::Host>* MonitorService::Stub::AsyncupdateHostRaw(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::Host>* ZabMonService::Stub::AsyncupdateHostRaw(::grpc::ClientContext* context, const ::zabmon::UpdateHostRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncupdateHostRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::zabmon::ListHostsResponse* response) {
+::grpc::Status ZabMonService::Stub::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::zabmon::ListHostsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::ListHostsRequest, ::zabmon::ListHostsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_listHosts_, context, request, response);
 }
 
-void MonitorService::Stub::async::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::ListHostsRequest, ::zabmon::ListHostsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listHosts_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::listHosts(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listHosts_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListHostsResponse>* MonitorService::Stub::PrepareAsynclistHostsRaw(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListHostsResponse>* ZabMonService::Stub::PrepareAsynclistHostsRaw(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::ListHostsResponse, ::zabmon::ListHostsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_listHosts_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListHostsResponse>* MonitorService::Stub::AsynclistHostsRaw(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListHostsResponse>* ZabMonService::Stub::AsynclistHostsRaw(::grpc::ClientContext* context, const ::zabmon::ListHostsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynclistHostsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::zabmon::ListGroupsResponse* response) {
+::grpc::Status ZabMonService::Stub::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::zabmon::ListGroupsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::ListGroupsRequest, ::zabmon::ListGroupsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_listGroups_, context, request, response);
 }
 
-void MonitorService::Stub::async::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::ListGroupsRequest, ::zabmon::ListGroupsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listGroups_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::listGroups(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listGroups_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListGroupsResponse>* MonitorService::Stub::PrepareAsynclistGroupsRaw(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListGroupsResponse>* ZabMonService::Stub::PrepareAsynclistGroupsRaw(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::ListGroupsResponse, ::zabmon::ListGroupsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_listGroups_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListGroupsResponse>* MonitorService::Stub::AsynclistGroupsRaw(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListGroupsResponse>* ZabMonService::Stub::AsynclistGroupsRaw(::grpc::ClientContext* context, const ::zabmon::ListGroupsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynclistGroupsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::zabmon::ListTemplatesResponse* response) {
+::grpc::Status ZabMonService::Stub::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::zabmon::ListTemplatesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::ListTemplatesRequest, ::zabmon::ListTemplatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_listTemplates_, context, request, response);
 }
 
-void MonitorService::Stub::async::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::ListTemplatesRequest, ::zabmon::ListTemplatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listTemplates_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::listTemplates(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listTemplates_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListTemplatesResponse>* MonitorService::Stub::PrepareAsynclistTemplatesRaw(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListTemplatesResponse>* ZabMonService::Stub::PrepareAsynclistTemplatesRaw(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::ListTemplatesResponse, ::zabmon::ListTemplatesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_listTemplates_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListTemplatesResponse>* MonitorService::Stub::AsynclistTemplatesRaw(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListTemplatesResponse>* ZabMonService::Stub::AsynclistTemplatesRaw(::grpc::ClientContext* context, const ::zabmon::ListTemplatesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynclistTemplatesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::zabmon::ListItemsResponse* response) {
+::grpc::Status ZabMonService::Stub::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::zabmon::ListItemsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::ListItemsRequest, ::zabmon::ListItemsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_listItems_, context, request, response);
 }
 
-void MonitorService::Stub::async::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::ListItemsRequest, ::zabmon::ListItemsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listItems_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::listItems(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listItems_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsResponse>* MonitorService::Stub::PrepareAsynclistItemsRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsResponse>* ZabMonService::Stub::PrepareAsynclistItemsRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::ListItemsResponse, ::zabmon::ListItemsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_listItems_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsResponse>* MonitorService::Stub::AsynclistItemsRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsResponse>* ZabMonService::Stub::AsynclistItemsRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynclistItemsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MonitorService::Stub::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::zabmon::ListItemsValuesResponse* response) {
+::grpc::Status ZabMonService::Stub::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::zabmon::ListItemsValuesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::zabmon::ListItemsValuesRequest, ::zabmon::ListItemsValuesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_listItemsValues_, context, request, response);
 }
 
-void MonitorService::Stub::async::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response, std::function<void(::grpc::Status)> f) {
+void ZabMonService::Stub::async::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::zabmon::ListItemsValuesRequest, ::zabmon::ListItemsValuesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listItemsValues_, context, request, response, std::move(f));
 }
 
-void MonitorService::Stub::async::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void ZabMonService::Stub::async::listItemsValues(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_listItemsValues_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsValuesResponse>* MonitorService::Stub::PrepareAsynclistItemsValuesRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsValuesResponse>* ZabMonService::Stub::PrepareAsynclistItemsValuesRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::zabmon::ListItemsValuesResponse, ::zabmon::ListItemsValuesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_listItemsValues_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsValuesResponse>* MonitorService::Stub::AsynclistItemsValuesRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::zabmon::ListItemsValuesResponse>* ZabMonService::Stub::AsynclistItemsValuesRaw(::grpc::ClientContext* context, const ::zabmon::ListItemsValuesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynclistItemsValuesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-MonitorService::Service::Service() {
+ZabMonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[0],
+      ZabMonService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::CreateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::CreateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::CreateHostRequest* req,
              ::zabmon::Host* resp) {
                return service->createHost(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[1],
+      ZabMonService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::CreateGroupRequest, ::zabmon::Group, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::CreateGroupRequest, ::zabmon::Group, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::CreateGroupRequest* req,
              ::zabmon::Group* resp) {
                return service->createGroup(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[2],
+      ZabMonService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::CreateTemplateRequest, ::zabmon::Template, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::CreateTemplateRequest, ::zabmon::Template, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::CreateTemplateRequest* req,
              ::zabmon::Template* resp) {
                return service->createTemplate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[3],
+      ZabMonService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::CreateItemRequest, ::zabmon::Item, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::CreateItemRequest, ::zabmon::Item, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::CreateItemRequest* req,
              ::zabmon::Item* resp) {
                return service->createItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[4],
+      ZabMonService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::DeleteHostRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::DeleteHostRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::DeleteHostRequest* req,
              ::google::protobuf::Empty* resp) {
                return service->deleteHost(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[5],
+      ZabMonService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::DeleteGroupRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::DeleteGroupRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::DeleteGroupRequest* req,
              ::google::protobuf::Empty* resp) {
                return service->deleteGroup(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[6],
+      ZabMonService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::DeleteTemplateRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::DeleteTemplateRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::DeleteTemplateRequest* req,
              ::google::protobuf::Empty* resp) {
                return service->deleteTemplate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[7],
+      ZabMonService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::DeleteItemRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::DeleteItemRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::DeleteItemRequest* req,
              ::google::protobuf::Empty* resp) {
                return service->deleteItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[8],
+      ZabMonService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::UpdateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::UpdateHostRequest, ::zabmon::Host, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::UpdateHostRequest* req,
              ::zabmon::Host* resp) {
                return service->updateHost(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[9],
+      ZabMonService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::ListHostsRequest, ::zabmon::ListHostsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::ListHostsRequest, ::zabmon::ListHostsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::ListHostsRequest* req,
              ::zabmon::ListHostsResponse* resp) {
                return service->listHosts(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[10],
+      ZabMonService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::ListGroupsRequest, ::zabmon::ListGroupsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::ListGroupsRequest, ::zabmon::ListGroupsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::ListGroupsRequest* req,
              ::zabmon::ListGroupsResponse* resp) {
                return service->listGroups(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[11],
+      ZabMonService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::ListTemplatesRequest, ::zabmon::ListTemplatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::ListTemplatesRequest, ::zabmon::ListTemplatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::ListTemplatesRequest* req,
              ::zabmon::ListTemplatesResponse* resp) {
                return service->listTemplates(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[12],
+      ZabMonService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::ListItemsRequest, ::zabmon::ListItemsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::ListItemsRequest, ::zabmon::ListItemsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::ListItemsRequest* req,
              ::zabmon::ListItemsResponse* resp) {
                return service->listItems(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MonitorService_method_names[13],
+      ZabMonService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MonitorService::Service, ::zabmon::ListItemsValuesRequest, ::zabmon::ListItemsValuesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MonitorService::Service* service,
+      new ::grpc::internal::RpcMethodHandler< ZabMonService::Service, ::zabmon::ListItemsValuesRequest, ::zabmon::ListItemsValuesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](ZabMonService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::zabmon::ListItemsValuesRequest* req,
              ::zabmon::ListItemsValuesResponse* resp) {
@@ -526,101 +526,101 @@ MonitorService::Service::Service() {
              }, this)));
 }
 
-MonitorService::Service::~Service() {
+ZabMonService::Service::~Service() {
 }
 
-::grpc::Status MonitorService::Service::createHost(::grpc::ServerContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response) {
+::grpc::Status ZabMonService::Service::createHost(::grpc::ServerContext* context, const ::zabmon::CreateHostRequest* request, ::zabmon::Host* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::createGroup(::grpc::ServerContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response) {
+::grpc::Status ZabMonService::Service::createGroup(::grpc::ServerContext* context, const ::zabmon::CreateGroupRequest* request, ::zabmon::Group* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::createTemplate(::grpc::ServerContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response) {
+::grpc::Status ZabMonService::Service::createTemplate(::grpc::ServerContext* context, const ::zabmon::CreateTemplateRequest* request, ::zabmon::Template* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::createItem(::grpc::ServerContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response) {
+::grpc::Status ZabMonService::Service::createItem(::grpc::ServerContext* context, const ::zabmon::CreateItemRequest* request, ::zabmon::Item* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::deleteHost(::grpc::ServerContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Service::deleteHost(::grpc::ServerContext* context, const ::zabmon::DeleteHostRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::deleteGroup(::grpc::ServerContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Service::deleteGroup(::grpc::ServerContext* context, const ::zabmon::DeleteGroupRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::deleteTemplate(::grpc::ServerContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Service::deleteTemplate(::grpc::ServerContext* context, const ::zabmon::DeleteTemplateRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::deleteItem(::grpc::ServerContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status ZabMonService::Service::deleteItem(::grpc::ServerContext* context, const ::zabmon::DeleteItemRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::updateHost(::grpc::ServerContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response) {
+::grpc::Status ZabMonService::Service::updateHost(::grpc::ServerContext* context, const ::zabmon::UpdateHostRequest* request, ::zabmon::Host* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::listHosts(::grpc::ServerContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response) {
+::grpc::Status ZabMonService::Service::listHosts(::grpc::ServerContext* context, const ::zabmon::ListHostsRequest* request, ::zabmon::ListHostsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::listGroups(::grpc::ServerContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response) {
+::grpc::Status ZabMonService::Service::listGroups(::grpc::ServerContext* context, const ::zabmon::ListGroupsRequest* request, ::zabmon::ListGroupsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::listTemplates(::grpc::ServerContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response) {
+::grpc::Status ZabMonService::Service::listTemplates(::grpc::ServerContext* context, const ::zabmon::ListTemplatesRequest* request, ::zabmon::ListTemplatesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::listItems(::grpc::ServerContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response) {
+::grpc::Status ZabMonService::Service::listItems(::grpc::ServerContext* context, const ::zabmon::ListItemsRequest* request, ::zabmon::ListItemsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MonitorService::Service::listItemsValues(::grpc::ServerContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response) {
+::grpc::Status ZabMonService::Service::listItemsValues(::grpc::ServerContext* context, const ::zabmon::ListItemsValuesRequest* request, ::zabmon::ListItemsValuesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

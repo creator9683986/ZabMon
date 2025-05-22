@@ -12,7 +12,7 @@ namespace zab::mon
 {
 
 /// @brief Класс, реализующий методы, сгенерированные из proto
-class Service final : public zabmon::MonitorService::Service
+class Service final : public zabmon::ZabMonService::Service
 {
  public:
   /// @brief Конструктор

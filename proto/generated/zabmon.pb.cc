@@ -731,31 +731,31 @@ const char descriptor_table_protodef_zabmon_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "EM_TYPE_TELNET_AGENT\020\017\022\030\n\024ITEM_TYPE_CALC"
   "ULATED\020\020\022\027\n\023ITEM_TYPE_JMX_AGENT\020\021\022\027\n\023ITE"
   "M_TYPE_SNMP_TRAP\020\022\022\034\n\030ITEM_TYPE_DEPENDEN"
-  "T_ITEM\020\023\022\030\n\024ITEM_TYPE_HTTP_AGENT\020\0242\253\007\n\016M"
-  "onitorService\0225\n\ncreateHost\022\031.zabmon.Cre"
-  "ateHostRequest\032\014.zabmon.Host\0228\n\013createGr"
-  "oup\022\032.zabmon.CreateGroupRequest\032\r.zabmon"
-  ".Group\022A\n\016createTemplate\022\035.zabmon.Create"
-  "TemplateRequest\032\020.zabmon.Template\0225\n\ncre"
-  "ateItem\022\031.zabmon.CreateItemRequest\032\014.zab"
-  "mon.Item\022\?\n\ndeleteHost\022\031.zabmon.DeleteHo"
-  "stRequest\032\026.google.protobuf.Empty\022A\n\013del"
-  "eteGroup\022\032.zabmon.DeleteGroupRequest\032\026.g"
-  "oogle.protobuf.Empty\022G\n\016deleteTemplate\022\035"
-  ".zabmon.DeleteTemplateRequest\032\026.google.p"
-  "rotobuf.Empty\022\?\n\ndeleteItem\022\031.zabmon.Del"
-  "eteItemRequest\032\026.google.protobuf.Empty\0225"
-  "\n\nupdateHost\022\031.zabmon.UpdateHostRequest\032"
-  "\014.zabmon.Host\022@\n\tlistHosts\022\030.zabmon.List"
-  "HostsRequest\032\031.zabmon.ListHostsResponse\022"
-  "C\n\nlistGroups\022\031.zabmon.ListGroupsRequest"
-  "\032\032.zabmon.ListGroupsResponse\022L\n\rlistTemp"
-  "lates\022\034.zabmon.ListTemplatesRequest\032\035.za"
-  "bmon.ListTemplatesResponse\022@\n\tlistItems\022"
-  "\030.zabmon.ListItemsRequest\032\031.zabmon.ListI"
-  "temsResponse\022R\n\017listItemsValues\022\036.zabmon"
-  ".ListItemsValuesRequest\032\037.zabmon.ListIte"
-  "msValuesResponseb\006proto3"
+  "T_ITEM\020\023\022\030\n\024ITEM_TYPE_HTTP_AGENT\020\0242\252\007\n\rZ"
+  "abMonService\0225\n\ncreateHost\022\031.zabmon.Crea"
+  "teHostRequest\032\014.zabmon.Host\0228\n\013createGro"
+  "up\022\032.zabmon.CreateGroupRequest\032\r.zabmon."
+  "Group\022A\n\016createTemplate\022\035.zabmon.CreateT"
+  "emplateRequest\032\020.zabmon.Template\0225\n\ncrea"
+  "teItem\022\031.zabmon.CreateItemRequest\032\014.zabm"
+  "on.Item\022\?\n\ndeleteHost\022\031.zabmon.DeleteHos"
+  "tRequest\032\026.google.protobuf.Empty\022A\n\013dele"
+  "teGroup\022\032.zabmon.DeleteGroupRequest\032\026.go"
+  "ogle.protobuf.Empty\022G\n\016deleteTemplate\022\035."
+  "zabmon.DeleteTemplateRequest\032\026.google.pr"
+  "otobuf.Empty\022\?\n\ndeleteItem\022\031.zabmon.Dele"
+  "teItemRequest\032\026.google.protobuf.Empty\0225\n"
+  "\nupdateHost\022\031.zabmon.UpdateHostRequest\032\014"
+  ".zabmon.Host\022@\n\tlistHosts\022\030.zabmon.ListH"
+  "ostsRequest\032\031.zabmon.ListHostsResponse\022C"
+  "\n\nlistGroups\022\031.zabmon.ListGroupsRequest\032"
+  "\032.zabmon.ListGroupsResponse\022L\n\rlistTempl"
+  "ates\022\034.zabmon.ListTemplatesRequest\032\035.zab"
+  "mon.ListTemplatesResponse\022@\n\tlistItems\022\030"
+  ".zabmon.ListItemsRequest\032\031.zabmon.ListIt"
+  "emsResponse\022R\n\017listItemsValues\022\036.zabmon."
+  "ListItemsValuesRequest\032\037.zabmon.ListItem"
+  "sValuesResponseb\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_zabmon_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -763,7 +763,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_zabmon_2eproto_deps
 };
 static ::_pbi::once_flag descriptor_table_zabmon_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_zabmon_2eproto = {
-    false, false, 3704, descriptor_table_protodef_zabmon_2eproto,
+    false, false, 3703, descriptor_table_protodef_zabmon_2eproto,
     "zabmon.proto",
     &descriptor_table_zabmon_2eproto_once, descriptor_table_zabmon_2eproto_deps, 2, 26,
     schemas, file_default_instances, TableStruct_zabmon_2eproto::offsets,

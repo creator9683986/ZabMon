@@ -5,7 +5,7 @@
 
 namespace zab::mon
 {
-/// @brief Класс бизнес логики
+/// @brief Класс логики
 class Monitor
 {
  public:

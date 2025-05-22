@@ -27,11 +27,11 @@
 
 namespace zabmon {
 
-// MonitorService
-class MonitorService final {
+// ZabMonService
+class ZabMonService final {
  public:
   static constexpr char const* service_full_name() {
-    return "zabmon.MonitorService";
+    return "zabmon.ZabMonService";
   }
   class StubInterface {
    public:

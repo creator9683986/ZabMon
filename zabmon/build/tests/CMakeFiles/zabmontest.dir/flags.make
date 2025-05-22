@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/timsus/projects/ZabMon/zabmon/src -I/home/timsus/projects/ZabMon/zabmon/../proto/generated -I/home/timsus/projects/ZabMon/zabmon/../src -I/usr/include/librdkafka
+CXX_INCLUDES = -I/home/timsus/projects/ZabMon/zabmon/src -I/home/timsus/projects/ZabMon/zabmon/../proto/generated -I/home/timsus/projects/ZabMon/zabmon/../src
 
 CXX_FLAGS = -std=gnu++17 -pthread -DGTEST_HAS_PTHREAD=1
 

@@ -6,8 +6,8 @@ import "google/protobuf/empty.proto";
 
 import "google/protobuf/timestamp.proto";
 
-// MonitorService
-service MonitorService {
+// ZabMonService
+service ZabMonService {
   // createHost - запрос создания хоста
   rpc createHost(CreateHostRequest) returns (Host);
   // createGroup - запрос создания группы хостов
