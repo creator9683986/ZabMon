@@ -1,0 +1,349 @@
+syntax = "proto3";
+
+package zabmon;
+
+import "google/protobuf/empty.proto";
+
+import "google/protobuf/timestamp.proto";
+
+// MonitorService
+service MonitorService {
+  // createHost - запрос создания хоста
+  rpc createHost(CreateHostRequest) returns (Host);
+  // createGroup - запрос создания группы хостов
+  rpc createGroup(CreateGroupRequest) returns (Group);
+  // createTemplate - запрос создания шаблона
+  rpc createTemplate(CreateTemplateRequest) returns (Template);
+  // createItem - запрос создания item
+  rpc createItem(CreateItemRequest) returns (Item);
+  // deleteHost - запрос удаления хоста
+  rpc deleteHost(DeleteHostRequest) returns (google.protobuf.Empty);
+  // deleteGroup - запрос удаления группы хостов
+  rpc deleteGroup(DeleteGroupRequest) returns (google.protobuf.Empty);
+  // deleteTemplate - запрос удаления шаблона
+  rpc deleteTemplate(DeleteTemplateRequest) returns (google.protobuf.Empty);
+  // deleteItem - запрос удаления item
+  rpc deleteItem(DeleteItemRequest) returns (google.protobuf.Empty);
+  // updateHost - запрос обновления хоста
+  rpc updateHost(UpdateHostRequest) returns (Host);
+  // listHosts - запрос получения списка хостов
+  rpc listHosts(ListHostsRequest) returns (ListHostsResponse);
+  // listGroups - запрос получения списка групп
+  rpc listGroups(ListGroupsRequest) returns (ListGroupsResponse);
+  // listTemplates - запрос списка шаблонов
+  rpc listTemplates(ListTemplatesRequest) returns (ListTemplatesResponse);
+  // listItems - запрос списка items
+  rpc listItems(ListItemsRequest) returns (ListItemsResponse);
+  // listItemsValues - запрос на получение списка значений
+  rpc listItemsValues(ListItemsValuesRequest) returns (ListItemsValuesResponse);
+}
+
+
+// ValueType - тип данных элемента
+enum ValueType {
+  // VALUE_TYPE_INVALID
+  VALUE_TYPE_INVALID = 0;
+  // VALUE_TYPE_NUMERIC_FLOAT
+  VALUE_TYPE_NUMERIC_FLOAT = 1;
+  // VALUE_TYPE_CHARACTER
+  VALUE_TYPE_CHARACTER = 2;
+  // VALUE_TYPE_LOG
+  VALUE_TYPE_LOG = 3;
+  // VALUE_TYPE_NUMERIC_UNSIGNED
+  VALUE_TYPE_NUMERIC_UNSIGNED = 4;
+  // VALUE_TYPE_TEXT
+  VALUE_TYPE_TEXT = 5;
+}
+
+// ItemType - тип item
+enum ItemType {
+  // ITEM_TYPE_INVALID
+  ITEM_TYPE_INVALID = 0;
+  // ITEM_TYPE_ZABBIX_AGENT
+  ITEM_TYPE_ZABBIX_AGENT = 1;
+  // ITEM_TYPE_SNMPV1_AGENT
+  ITEM_TYPE_SNMPV1_AGENT = 2;
+  // ITEM_TYPE_TRAPPER
+  ITEM_TYPE_TRAPPER = 3;
+  // ITEM_TYPE_SIMPLE_CHECK
+  ITEM_TYPE_SIMPLE_CHECK = 4;
+  // ITEM_TYPE_SNMPV2_AGENT
+  ITEM_TYPE_SNMPV2_AGENT = 5;
+  // ITEM_TYPE_INTERNAL
+  ITEM_TYPE_INTERNAL = 6;
+  // ITEM_TYPE_SNMPV3_AGENT
+  ITEM_TYPE_SNMPV3_AGENT = 7;
+  // ITEM_TYPE_ZABBIX_AGENT_ACTIVE
+  ITEM_TYPE_ZABBIX_AGENT_ACTIVE = 8;
+  // ITEM_TYPE_AGGREGATE
+  ITEM_TYPE_AGGREGATE = 9;
+  // ITEM_TYPE_WEB_ELEMENT
+  ITEM_TYPE_WEB_ELEMENT = 10;
+  // ITEM_TYPE_EXTERNAL_CHECK
+  ITEM_TYPE_EXTERNAL_CHECK = 11;
+  // ITEM_TYPE_DATABASE_MONITOR
+  ITEM_TYPE_DATABASE_MONITOR = 12;
+  // ITEM_TYPE_IPMI_AGENT
+  ITEM_TYPE_IPMI_AGENT = 13;
+  // ITEM_TYPE_SSH_AGENT
+  ITEM_TYPE_SSH_AGENT = 14;
+  // ITEM_TYPE_TELNET_AGENT
+  ITEM_TYPE_TELNET_AGENT = 15;
+  // ITEM_TYPE_CALCULATED
+  ITEM_TYPE_CALCULATED = 16;
+  // ITEM_TYPE_JMX_AGENT
+  ITEM_TYPE_JMX_AGENT = 17;
+  // ITEM_TYPE_SNMP_TRAP
+  ITEM_TYPE_SNMP_TRAP = 18;
+  // ITEM_TYPE_DEPENDENT_ITEM
+  ITEM_TYPE_DEPENDENT_ITEM = 19;
+  // ITEM_TYPE_HTTP_AGENT
+  ITEM_TYPE_HTTP_AGENT = 20;
+}
+
+// Item - элемент данных
+message Item {
+  // metric_key - уникальный идентификатор айтема, который используется для
+  // описания собираемого значения
+  string metric_key = 2;
+  // type - класс
+  ItemType type = 3;
+  // value_type - тип данных
+  ValueType value_type = 4;
+  // delay - интервал опроса в секундах
+  string delay = 5;
+  // id - id item (только для чтения)
+  string id = 6;
+  // interface_id - id интерфейса
+  string interface_id = 7;
+  // name - имя item
+  string name = 8;
+  // parent_id - id родителя
+  string parent_id = 9;
+}
+
+// ItemValues - значения отслеживаемого объекта
+message ItemValues {
+  // values - список значений (только для чтения)
+  repeated Value values = 1;
+  // item - item (только для чтения)
+  Item item = 2;
+}
+
+// Value - значение
+message Value {
+  // timestamp - метка времени (только для чтения)
+  google.protobuf.Timestamp timestamp = 1;
+  // value - значение (только для чтения)
+  string value = 6;
+}
+
+// Group - группа
+message Group {
+  // name - имя
+  string name = 1;
+  // templates_ids - список шаблонов (только для чтения)
+  repeated string templates_ids = 3;
+  // id - id (только для чтения)
+  string id = 4;
+}
+
+// Interface - информация о интерфейсе
+message Interface {
+  // ip - ip
+  string ip = 1;
+  // port - порт
+  int32 port = 2;
+  // dns - dns
+  string dns = 3;
+  // id - id (только для чтения)
+  string id = 4;
+}
+
+// Template - шаблон
+message Template {
+  // name - название шаблона
+  string name = 1;
+  // groups_ids - id родительских групп
+  repeated string groups_ids = 3;
+  // id - id (только для чтения)
+  string id = 4;
+}
+
+// Host - информация о хосте
+message Host {
+  // name - имя
+  string name = 1;
+  // interfaces - список интерфейсов
+  repeated Interface interfaces = 2;
+  // groups_ids - список групп, куда добавить (Обязатльно наличие хотябы одной)
+  repeated string groups_ids = 5;
+  // templates_ids - список шаблонов (только для чтения)
+  repeated string templates_ids = 6;
+  // id - id хоста
+  string id = 7;
+}
+
+// CreateHostRequest - запрос создания хоста
+message CreateHostRequest {
+  // host - объект хоста
+  Host host = 1;
+}
+
+// UpdateHostRequest - запрос обновления хоста
+message UpdateHostRequest {
+  // host - объект хоста
+  Host host = 1;
+}
+
+// DeleteHostRequest - запрос удаления хоста
+message DeleteHostRequest {
+  // id - id хоста
+  string id = 2;
+}
+
+// ListHostsRequest - запрос списка хостов
+message ListHostsRequest {
+  // page_size - максимальное число возвращаемое за 1 запрос, если 0, сервер сам
+  // определяет число
+  int32 page_size = 1;
+  // page_token - токен, с которого продолжить возврат значений, если пусто, то
+  // с первого
+  string page_token = 2;
+  // groups_ids - фильтр по группам
+  repeated string groups_ids = 4;
+}
+
+// ListHostsResponse - ответ на запрос списка хостов
+message ListHostsResponse {
+  // hosts - список хостов
+  repeated Host hosts = 1;
+  // next_page_token - токен для получения следующей страницы
+  string next_page_token = 2;
+}
+
+// ListGroupsRequest - запрос списка групп
+message ListGroupsRequest {
+  // page_size - максимальное число возвращаемое за 1 запрос, если 0, сервер сам
+  // определяет число
+  int32 page_size = 1;
+  // page_token - токен, с которого продолжить возврат значений, если пусто, то
+  // с первого
+  string page_token = 2;
+}
+
+// ListGroupsResponse - ответ на запрос списка групп
+message ListGroupsResponse {
+  // groups - список групп
+  repeated Group groups = 1;
+  // next_page_token - токен для получения следующей страницы
+  string next_page_token = 2;
+}
+
+// CreateGroupRequest - запрос создания группы хостов
+message CreateGroupRequest {
+  // group - группа
+  Group group = 1;
+}
+
+// DeleteGroupRequest - запрос удаления хоста
+message DeleteGroupRequest {
+  // force - принудительное удаление
+  bool force = 2;
+  // id - id группы
+  string id = 3;
+}
+
+// CreateTemplateRequest - запрос создания шаблона
+message CreateTemplateRequest {
+  // template - шаблон
+  Template template = 1;
+}
+
+// DeleteTemplateRequest - запрос удаления шаблона
+message DeleteTemplateRequest {
+  // force - принудительное удаление
+  bool force = 2;
+  // id - id шаблона
+  string id = 3;
+}
+
+// CreateItemRequest - запрос создания item
+message CreateItemRequest {
+  // item_name - item
+  Item item = 1;
+}
+
+// DeleteItemRequest - запрос удаления item
+message DeleteItemRequest {
+  // force - принудительное удаление
+  bool force = 2;
+  // id - id item
+  string id = 3;
+}
+
+// ListItemsValuesRequest - запрос получения истории значения
+message ListItemsValuesRequest {
+  // items - список item для получения списка значений
+  repeated Item items = 1;
+  // limit -  максимальное количество значений для получения
+  int32 limit = 2;
+  // page_size - максимальное число возвращаемое за 1 запрос, если 0, сервер сам
+  // определяет число
+  int32 page_size = 3;
+  // page_token - токен, с которого продолжить возврат значений, если пусто, то
+  // с первого
+  string page_token = 4;
+}
+
+// ListItemsValuesResponse - ответ на запрос получения истории значения
+message ListItemsValuesResponse {
+  // values - история значений
+  repeated ItemValues values = 1;
+  // next_page_token - токен для получения следующей страницы
+  string next_page_token = 2;
+}
+
+// ListItemsRequest - запрос списка items
+message ListItemsRequest {
+  // page_size - максимальное число возвращаемое за 1 запрос, если 0, сервер сам
+  // определяет число
+  int32 page_size = 4;
+  // page_token - токен, с которого продолжить возврат значений, если пусто, то
+  // с первого
+  string page_token = 5;
+  // groups_ids - фильтр по группе
+  repeated string groups_ids = 6;
+  // templates_ids - фильтр по шаблону
+  repeated string templates_ids = 7;
+  // hosts_ids - фильтр по хосту
+  repeated string hosts_ids = 8;
+}
+
+// ListItemsResponse - ответ на запрос списка items
+message ListItemsResponse {
+  // items - items
+  repeated Item items = 1;
+  // next_page_token - токен для получения следующей страницы
+  string next_page_token = 2;
+}
+
+// ListTemplatesRequest - запрос списка шаблонов
+message ListTemplatesRequest {
+  // page_size - максимальное число возвращаемое за 1 запрос, если 0, сервер сам
+  // определяет число
+  int32 page_size = 1;
+  // page_token - токен, с которого продолжить возврат значений, если пусто, то
+  // с первого
+  string page_token = 2;
+  // groups_ids - фильтр по группам
+  repeated string groups_ids = 4;
+}
+
+// ListTemplatesResponse - ответ на запрос списка шаблонов
+message ListTemplatesResponse {
+  // templates - список групп
+  repeated Template templates = 1;
+  // next_page_token - токен для получения следующей страницы
+  string next_page_token = 2;
+}
