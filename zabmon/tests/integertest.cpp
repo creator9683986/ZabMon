@@ -17,7 +17,7 @@
 #include "zabmon.grpc.pb.h"
 
 
-class StcdMonitorTest : public ::testing::Test
+class ZabmonTest : public ::testing::Test
 {
  protected:
 
@@ -228,11 +228,11 @@ const auto g_checkItem =
     };
 
 
-GTEST_TEST_F(StcdMonitorTest, GetListGroups)
+GTEST_TEST_F(ZabmonTest, GetListGroups)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto request = zabmon::ListGroupsRequest();
     zabmon::ListGroupsResponse resp;
     grpc::ClientContext ctx;
@@ -245,11 +245,11 @@ GTEST_TEST_F(StcdMonitorTest, GetListGroups)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, getListTemplates)
+GTEST_TEST_F(ZabmonTest, getListTemplates)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto request = zabmon::ListTemplatesRequest();
     auto *gr = request.mutable_groups_ids()->Add();
     gr->append(m_groupsIds.at("Templates/Telephony"));
@@ -264,14 +264,14 @@ GTEST_TEST_F(StcdMonitorTest, getListTemplates)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, getListItems)
+GTEST_TEST_F(ZabmonTest, getListItems)
 {
   constexpr int itemsHostFilter = 121;
   constexpr int itemsTemplateFilter = 1;
   constexpr int itemsGroupFilter = 0;
 
   std::unique_ptr<zabmon::ZabMonService::Stub> client =
-      StcdMonitorTest::CreateMonitorStub();
+      ZabmonTest::CreateMonitorStub();
 
   const auto testImpl =
       [](const zabmon::ListItemsRequest &request, int32_t size,
@@ -295,11 +295,11 @@ GTEST_TEST_F(StcdMonitorTest, getListItems)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, getListItemsValues)
+GTEST_TEST_F(ZabmonTest, getListItemsValues)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
 
     auto request = zabmon::ListItemsValuesRequest();
     request.set_limit(2);
@@ -326,11 +326,11 @@ GTEST_TEST_F(StcdMonitorTest, getListItemsValues)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, GetListHosts)
+GTEST_TEST_F(ZabmonTest, GetListHosts)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto request = zabmon::ListHostsRequest();
     auto *filter = request.mutable_groups_ids()->Add();
     filter->append(m_groupsIds.at("Zabbix servers"));
@@ -368,11 +368,11 @@ GTEST_TEST_F(StcdMonitorTest, GetListHosts)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, CRUD)
+GTEST_TEST_F(ZabmonTest, CRUD)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
 
     const int port = 10050;
     auto requestCR = zabmon::CreateHostRequest();
@@ -421,11 +421,11 @@ GTEST_TEST_F(StcdMonitorTest, CRUD)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, CreateAndDeleteTemplate)
+GTEST_TEST_F(ZabmonTest, CreateAndDeleteTemplate)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto requestCR = zabmon::CreateTemplateRequest();
     auto *temp = requestCR.mutable_template_();
     temp->set_name("ApiTestTemplate");
@@ -452,11 +452,11 @@ GTEST_TEST_F(StcdMonitorTest, CreateAndDeleteTemplate)
 }
 
 
-GTEST_TEST_F(StcdMonitorTest, CreateAndDeleteGroup)
+GTEST_TEST_F(ZabmonTest, CreateAndDeleteGroup)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto requestCR = zabmon::CreateGroupRequest();
     auto *gr = requestCR.mutable_group();
     gr->set_name("TestGroup");
@@ -480,11 +480,11 @@ GTEST_TEST_F(StcdMonitorTest, CreateAndDeleteGroup)
   }
 }
 
-GTEST_TEST_F(StcdMonitorTest, CreateAndDeleteItem)
+GTEST_TEST_F(ZabmonTest, CreateAndDeleteItem)
 {
   try {
     std::unique_ptr<zabmon::ZabMonService::Stub> client =
-        StcdMonitorTest::CreateMonitorStub();
+        ZabmonTest::CreateMonitorStub();
     auto requestCR = zabmon::CreateItemRequest();
     auto *item = requestCR.mutable_item();
 
