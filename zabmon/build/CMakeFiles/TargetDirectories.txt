@@ -1,6 +1,0 @@
-/home/timsus/projects/ZabMon/zabmon/build/CMakeFiles/zabmon.dir
-/home/timsus/projects/ZabMon/zabmon/build/CMakeFiles/edit_cache.dir
-/home/timsus/projects/ZabMon/zabmon/build/CMakeFiles/rebuild_cache.dir
-/home/timsus/projects/ZabMon/zabmon/build/tests/CMakeFiles/zabmontest.dir
-/home/timsus/projects/ZabMon/zabmon/build/tests/CMakeFiles/edit_cache.dir
-/home/timsus/projects/ZabMon/zabmon/build/tests/CMakeFiles/rebuild_cache.dir

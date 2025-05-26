@@ -20,7 +20,7 @@ include_directories(${CMAKE_SOURCE_DIR}/../proto/generated)
 set(GENERATED_DIR ${CMAKE_SOURCE_DIR}/../proto/generated)
 
 set(TEST_SOURCES
-    zabbixapi.cpp
+    integertest.cpp
     ${CMAKE_SOURCE_DIR}/src/api/zabbixapi.cpp
     ${CMAKE_SOURCE_DIR}/src/api/jsonrpcmanager.cpp
     ${CMAKE_SOURCE_DIR}/src/exceptions.cpp
@@ -31,6 +31,9 @@ set(TEST_SOURCES
     ${CMAKE_SOURCE_DIR}/src/structures/template.cpp
     ${CMAKE_SOURCE_DIR}/src/structures/value.cpp
     ${CMAKE_SOURCE_DIR}/src/structures/interfaces.cpp
+    ${CMAKE_SOURCE_DIR}/src/service.cpp
+    ${CMAKE_SOURCE_DIR}/src/monitor.cpp
+    ${CMAKE_SOURCE_DIR}/src/grpcadapter.cpp
     ${GENERATED_DIR}/zabmon.pb.cc
     ${GENERATED_DIR}/zabmon.grpc.pb.cc
 )
